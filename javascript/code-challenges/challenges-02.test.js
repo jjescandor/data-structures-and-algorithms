@@ -155,11 +155,9 @@ const snorlaxAbilities = {
 const extractAbilities = (arr) => {
   return arr.map(value => {
     let temp = '';
-    for (let a in value) {
-      for (let b of Object.values(value)) {
-        if (typeof b === 'object')
-          temp = b.name;
-      }
+    for (let b of Object.values(value)) {
+      if (typeof b === 'object')
+        temp = b.name;
     }
     return temp;
   });
