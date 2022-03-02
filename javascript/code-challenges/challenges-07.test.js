@@ -172,11 +172,11 @@ const stepActions = (recipe) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
- 
+
 Write a function named removeEvenValues that, given an array of integers as input, deletes all even values from the array, leaving no 'gaps' behind.
- 
+
 The array should be modified in-place.
- 
+
 For example:
   const integers = [1, 2, 3, 4, 5, 6];
   removeEvenValues(integers);
@@ -189,13 +189,13 @@ const removeEvenValues = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
- 
+
 Write a function named removeLastCharacters that takes in a string and a number. The numberOfCharacters argument determines how many characters will be removed from the end of the string. Return the resulting string.
- 
+
 If the numberOfCharacters argument is greater than the length of the input string, the function should return an empty string.
- 
+
 If the numberOfCharacters argument input is a negative number, the function should return the input string without any changes.
- 
+
 For example:
 removeLastCharacters('Gregor', 2) returns 'Greg'
 removeLastCharacters('Gregor', -2) returns 'Gregor'
@@ -209,7 +209,7 @@ const removeLastCharacters = (str, numberOfCharacters) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
- 
+
 Write a function named totalSumCSV that, given a string of comma-separated values (CSV) as input. (e.g. "1,2,3"), returns the total sum of the numeric values (e.g. 6).
 ------------------------------------------------------------------------------------------------ */
 
