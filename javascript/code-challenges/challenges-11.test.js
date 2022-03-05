@@ -77,8 +77,14 @@ This function should then raise 2 to the power of the resulting numbers, returni
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
+
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  let newArr = input.map(value => value.filter(num => {
+    return typeof num === 'number' && num % 5 === 0
+  }));
+  return newArr.map(value => {
+    return value.map(num => 2 ** num)
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -144,11 +150,11 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  let dataName = '';
-  data.filter(value => {
+  return data.filter(value => {
     return value.gender === 'male' || value.gender === 'female';
-  }).forEach(person => dataName += person.name + ' and ');
-  dataName.lastIndexOf;
+  }).map(value => value.name).reduce((acc, curr) => {
+    return acc += ` and ${curr}`;
+  })
 };
 
 
@@ -160,8 +166,15 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-
-}
+  let shortest = data.map(value => parseInt(value.height)).reduce((acc, curr) => {
+    return acc > curr ? curr : acc;
+  });
+  for (let peep of data) {
+    if (peep.height === shortest.toString()) {
+      return peep.name;
+    }
+  }
+};
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
