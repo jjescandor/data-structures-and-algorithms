@@ -15,6 +15,7 @@ const screenForNames = (arr) => {
   return arr.filter(str => pattern.test(str));
 };
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
