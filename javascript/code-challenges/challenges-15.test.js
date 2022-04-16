@@ -11,8 +11,10 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
-  // Solution code here...
-}
+  const pattern = /(Mr|Mrs|Dr|Ms|s).\s[A-Za-z]+/gm;
+  return arr.filter(str => pattern.test(str));
+};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -140,7 +142,7 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  return /^https:\/\//.test(url);
+  return /https:\/\//.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -163,7 +165,15 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  let newBool = false;
+  const helpCheck = (row1, col1, row2, col2, row3, col3) => {
+    return board[row1][col1] === board[row2][col2] && board[row2][col2] === board[row3][col3] && board[row1][col1] !== '';
+  };
+  for (let i = 0; i < 3; i++) {
+    helpCheck(i, 0, i, 1, i, 2, board) || helpCheck(0, i, 1, i, 2, i, board) ? newBool = true : 0;
+  }
+  helpCheck(0, 0, 1, 1, 2, 2, board) || helpCheck(0, 2, 2, 2, 2, 0, board) ? newBool = true : 0;
+  return newBool;
 };
 
 /* ------------------------------------------------------------------------------------------------
